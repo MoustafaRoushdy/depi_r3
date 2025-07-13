@@ -1,0 +1,5 @@
+Task1
+1. Please don't use ai or google
+2. run the playbook
+3. using "lineinfile" module to add your name to the previously created file
+4. ansible-doc lineinfile
