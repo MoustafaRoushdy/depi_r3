@@ -3,3 +3,5 @@ Task1
 2. run the playbook
 3. using "lineinfile" module to add your name to the previously created file
 4. ansible-doc lineinfile
+5. to check it really worked use ansible ad-hoc module 
+examepl: ansible -i inventory.ini -m command -a "cat ~/file.txt"
