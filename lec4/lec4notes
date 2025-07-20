@@ -1,0 +1,25 @@
+echo $? => to print exit code of the last command
+#!/bin/bash => shebang line which tells the script which executable will run the script
+~/.bashrc   => runs every time a new shell starts for the user
+
+setting a var x=5  #can't have a space
+export x=5 => if we need a child bash to access the var
+accessing a var $x
+test command to test a boolean expression
+man test => for more info about how to use it
+[] = test => in bash scripts
+read to take a var as input from the user
+
+Task:
+1. Ask the user about his grade ( using prompt, don't use read )
+2. if the user has a grade >= 90 print excellent
+3. if grade >= 70 print good
+4. if grade >= 50 print passed
+5. if grade < 50 print faild
+
+Task:
+1. create a fun called sign up
+2. take the username, password and age as input from the user
+3. redirect all the info to a file called user info
+4. sign in, ready the user info file, compare the credentials 
+5. use a menu so a user can choose to sign in or sign up

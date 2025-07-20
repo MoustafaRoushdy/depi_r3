@@ -1,0 +1,21 @@
+---
+- name: Create users in Servers
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure that user amin exists ( Idempotent )
+      when: ansible_os_family == "Debian"
+      ansible.builtin.user: 
+        name: amin
+        shell: /bin/bash 
+        home: /home/amin
+        groups: sudo
+
+    - name: Ensure that user amin exists ( Idempotent )
+      when: ansible_os_family == "RedHat"
+      ansible.builtin.user: 
+        name: amin
+        shell: /bin/bash 
+        home: /home/amin
+        groups: wheel
+

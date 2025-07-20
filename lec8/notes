@@ -1,0 +1,5 @@
+Program: simple is a code 
+Process: when the code is loaded into memory and running
+daemon: process keeps running the background
+service: processes managed by systemd
+
