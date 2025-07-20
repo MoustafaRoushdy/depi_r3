@@ -1,0 +1,43 @@
+
+PLAY [Configure Apache Web Server] *********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [13.222.52.99]
+ok: [98.82.5.227]
+
+TASK [Install Apache on Ubuntu] ************************************************
+skipping: [13.222.52.99]
+ok: [98.82.5.227]
+
+TASK [Install Apache on RedHat] ************************************************
+skipping: [98.82.5.227]
+ok: [13.222.52.99]
+
+TASK [Ensure Apache is running on Ubuntu] **************************************
+skipping: [13.222.52.99]
+ok: [98.82.5.227]
+
+TASK [Ensure Apache is running on RedHat] **************************************
+skipping: [98.82.5.227]
+ok: [13.222.52.99]
+
+TASK [Configure Apache to listen on port 8080 (Ubuntu)] ************************
+skipping: [13.222.52.99]
+changed: [98.82.5.227]
+
+TASK [Configure Apache to listen on port 8080 (RedHat)] ************************
+skipping: [98.82.5.227]
+ok: [13.222.52.99]
+
+TASK [Restart Apache to apply port change (Ubuntu)] ****************************
+skipping: [13.222.52.99]
+changed: [98.82.5.227]
+
+TASK [Restart Apache to apply port change (RedHat)] ****************************
+skipping: [98.82.5.227]
+changed: [13.222.52.99]
+
+PLAY RECAP *********************************************************************
+13.222.52.99               : ok=5    changed=1    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+98.82.5.227                : ok=5    changed=2    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+

@@ -1,28 +1,62 @@
 - name: Configure Apache Web Server
-  hosts: ubuntu_server
+  hosts: all
   become: true
   vars:
-    package_name: apache2
+    apache_package_ubuntu: apache2
+    apache_package_redhat: httpd
+    apache_port: 8080
+    ubuntu_config_file: /etc/apache2/ports.conf
+    redhat_config_file: /etc/httpd/conf/httpd.conf
   tasks:
-    - name: insall apache web server
+    - name: Install Apache on Ubuntu
       when: ansible_distribution == "Ubuntu"
-      ansible.builtin.apt: 
-        name: apache2
+      ansible.builtin.apt:
+        name: "{{ apache_package_ubuntu }}"
+        state: present
+        update_cache: yes
 
-    - name: insall apache web server
+    - name: Install Apache on RedHat
       when: ansible_distribution == "RedHat"
-      ansible.builtin.dnf: 
-        name: httpd
+      ansible.builtin.dnf:
+        name: "{{ apache_package_redhat }}"
+        state: present
 
-
-    - name: Ensuring that apache is running 
-      service:
-        name: apache2
+    - name: Ensure Apache is running on Ubuntu
+      when: ansible_distribution == "Ubuntu"
+      ansible.builtin.service:
+        name: "{{ apache_package_ubuntu }}"
         state: started
+        enabled: yes
 
-    ## to do configure the apache to listen in port 8080
-    ## and restart the apache
-    ## use repalce module to replace the port
+    - name: Ensure Apache is running on RedHat
+      when: ansible_distribution == "RedHat"
+      ansible.builtin.service:
+        name: "{{ apache_package_redhat }}"
+        state: started
+        enabled: yes
 
-    
+    - name: Configure Apache to listen on port 8080 (Ubuntu)
+      when: ansible_distribution == "Ubuntu"
+      ansible.builtin.replace:
+        path: "{{ ubuntu_config_file }}"
+        regexp: '^Listen\s+80$'
+        replace: "Listen {{ apache_port }}"
 
+    - name: Configure Apache to listen on port 8080 (RedHat)
+      when: ansible_distribution == "RedHat"
+      ansible.builtin.replace:
+        path: "{{ redhat_config_file }}"
+        regexp: '^Listen\s+80$'
+        replace: "Listen {{ apache_port }}"
+
+    - name: Restart Apache to apply port change (Ubuntu)
+      when: ansible_distribution == "Ubuntu"
+      ansible.builtin.service:
+        name: "{{ apache_package_ubuntu }}"
+        state: restarted
+
+    - name: Restart Apache to apply port change (RedHat)
+      when: ansible_distribution == "RedHat"
+      ansible.builtin.service:
+        name: "{{ apache_package_redhat }}"
+        state: restarted
