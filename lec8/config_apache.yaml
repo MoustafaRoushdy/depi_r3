@@ -20,9 +20,23 @@
         name: apache2
         state: started
 
+    - name: Ensure that apache runs on port 8080
+      notify: Ensuring that apache is restarted
+      replace:
+        regexp: "^Listen 80$"
+        path: /etc/apache2/ports.conf
+        replace: "Listen 8080"
+
+  handlers:
+    - name: Ensuring that apache is restarted 
+      service:
+        name: apache2
+        state: restarted
+
     ## to do configure the apache to listen in port 8080
     ## and restart the apache
     ## use repalce module to replace the port
+    #
 
     
 
