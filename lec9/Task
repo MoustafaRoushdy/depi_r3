@@ -1,5 +1,5 @@
 Search about Mariadb Image in dockerhub 
-1. run a container from it 
+1. run a container from it || add this option to the docker run command --env MARIADB_ROOT_PASSWORD=my-secret-pw 
 2. name the container <yourname>-maridadb
 3. portforward port 3306 from the host to the same port inside the container
 4. make sure that the container runs in the detached mode
