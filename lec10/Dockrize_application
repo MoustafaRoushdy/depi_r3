@@ -1,0 +1,8 @@
+1. Search for the dependencies file
+2. Search about how to install the depnedencies
+3. Start writing the Dockerfile
+4. search about suitable base image
+5. copy the application inside the image
+6. install the dependencies
+7. give it the command to run when the container starts
+8. build the image with the command "docker build -t <image>:<tag> ."
