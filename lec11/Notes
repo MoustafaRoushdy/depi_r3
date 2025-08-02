@@ -1,0 +1,3 @@
+imagename:  <registery>/<namespace>/<reponame>:<tag>
+            docker.io/moustafaroushdy/flask_depi_r3:v0.3
+            https://hub.docker.com/repository/docker/moustafaroushdy/flask_depi_r3
