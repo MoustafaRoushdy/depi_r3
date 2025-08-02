@@ -1,3 +1,15 @@
 imagename:  <registery>/<namespace>/<reponame>:<tag>
             docker.io/moustafaroushdy/flask_depi_r3:v0.3
             https://hub.docker.com/repository/docker/moustafaroushdy/flask_depi_r3
+
+
+1. Displaying the file contents on the terminal ✅ lec1
+2. File and Directory Manipulation Commands✅ lec1
+3. Extract, sort and filter data Commands
+4. Basic Terminal Navigation Commands✅ lec1
+5. File Permissions Commands ✅ lec3
+6. Linux Directory Structure ✅ lec3
+7. Input Output Redirection in Linux  ✅ lec3
+8. Variables and Bash Scripting ✅ lec4 63-90
+9. Working with Debian Packages using dpkg Command ✅ lec4 90-98
+10. Linux Networking Tools ✅ lec 11 98-107
