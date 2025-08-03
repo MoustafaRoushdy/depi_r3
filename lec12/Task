@@ -6,3 +6,17 @@ create a file index.html has content <center> hello {your name} </center>
 2. use bind mount https://docs.docker.com/engine/storage/bind-mounts/ 
 to bind the index.html file to the two containers
 3. use "curl" container to test the above created containers 
+
+
+Using Docker Compose 
+
+1. network front_back   (front container, back container )
+2. network back_database (back container, database container)
+
+Task 
+1. Create the above two networks
+2. Create a nginx container in the network 1
+3. Create a container form your flask app in network 1, and network 2 
+4. Create a Maria db container in network 2
+5. verify with screenshots
+6. exec in the nginx container, curl the ip:port of your flask app

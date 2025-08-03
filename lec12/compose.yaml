@@ -1,0 +1,22 @@
+services:
+  back:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    networks:
+      - back_redis
+  redis:
+    image: "redis:alpine"
+    networks:
+      - back_redis
+
+
+
+networks:
+  - back_redis
+
+
+volumes:
+  - test
