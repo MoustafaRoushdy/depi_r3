@@ -1,0 +1,8 @@
+There is a file in each web server that represents the entypoint
+usually: index.html
+create a file index.html has content <center> hello {your name} </center>
+
+1. Create two container from the image httpd
+2. use bind mount https://docs.docker.com/engine/storage/bind-mounts/ 
+to bind the index.html file to the two containers
+3. use "curl" container to test the above created containers 
