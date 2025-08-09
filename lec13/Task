@@ -1,0 +1,4 @@
+1. Create a deployment from your flask applicatoin 
+2. Create a ClusterIP service to access you app, the service port is 8000
+3. port-forward from your local machine on the service using 7000 port
+4. Screen shot from commands and from browser after port-forward
