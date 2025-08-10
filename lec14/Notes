@@ -4,3 +4,9 @@ k create service
 3. use the two options together and forward the output to a file
 4. use k create/apply -f <filename> to create the service
 5. use port-forward to test your resources
+
+Resources:
+free
+1. https://www.youtube.com/watch?v=jTggu1HiKyY&list=PLX1bW_GeBRhDCHijCrMO5F-oHg52rRBpl
+paid:
+1. https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/?couponCode=PMNVD2525 
