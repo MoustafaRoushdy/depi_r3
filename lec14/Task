@@ -4,3 +4,6 @@
 Note: search about mysql client 
 4. connect to the client pod using k exec -it <podname> -- /bin/bash
 5. if you are stuck in (3,4), just create port-forward and connect to the database
+Notes
+1. k run --help   => use to know how to run a pod
+2. k describe  <podname> => to get pod lables and any info about it 
