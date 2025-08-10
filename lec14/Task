@@ -1,0 +1,6 @@
+1. Create mariadb pod use -e to pass env variable to the pod 
+2. Create a svc without exposing
+3. connect to the service with another pod
+Note: search about mysql client 
+4. connect to the client pod using k exec -it <podname> -- /bin/bash
+5. if you are stuck in (3,4), just create port-forward and connect to the database

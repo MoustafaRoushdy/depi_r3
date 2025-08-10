@@ -1,0 +1,6 @@
+k create service
+1. run --help to get how to get a dry-run ( use the client option )
+2. run --help to get the output of the file as yaml file 
+3. use the two options together and forward the output to a file
+4. use k create/apply -f <filename> to create the service
+5. use port-forward to test your resources
