@@ -1,0 +1,5 @@
+1. Create a database-server namespace <file> 
+2. Run mariadb inside it <file> 
+3. Expose the database into a service <file>
+4. Access the service from a mysql client <command>
+5. k apply -f <filename>
