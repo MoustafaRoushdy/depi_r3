@@ -1,0 +1,6 @@
+1. Create a new verison of your application containing "hello from version 2"
+2. build a new image with a new tag 
+3. push the new image to your dockerhub
+4. update the deployment of your application to the new image
+5. run k rollout status and "screenshot" during the update 
+6. rollback to the previous version => k rollout undo
