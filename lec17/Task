@@ -31,5 +31,6 @@ kubecto config --help
 Task2
 0. Make sure that your cluster at least has two nodes
 1. create a sample deployment yaml file
-2. edit the file to use it as daemonset with an image of prometheus node agent 
+2. edit the file to use it as daemonset with an image of prometheus node agent: bitnami/node-exporter:latest
+
 3. verify 
