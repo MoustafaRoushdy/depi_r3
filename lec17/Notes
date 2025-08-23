@@ -1,2 +1,5 @@
 kubectl config set-context --current --namespace=<namespace-name> => to update current namespace
+vimtutor =>      to learn vim
+
+Daemonset => schedule a single pod in each node
 

@@ -27,3 +27,9 @@ Action pod2 access pod1 using the service name.  command = mysql -u root -p1234 
 
 kubectl -n <namspace> 
 kubecto config --help
+
+Task2
+0. Make sure that your cluster at least has two nodes
+1. create a sample deployment yaml file
+2. edit the file to use it as daemonset with an image of prometheus node agent 
+3. verify 
