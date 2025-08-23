@@ -1,0 +1,29 @@
+Task1
+1. Create a database-server namespace <file> 
+2. Run mariadb inside it <file> 
+3. Expose the database into a service <file>
+4. Access the service from a mysql client <command> fromdatabase-client namespace (create the namespace)
+5. k apply -f <filename>
+
+Note 
+when you access the database -h option give it servicename.namespace
+
+
+Namespace database-server 
+
+1. pod => mariadb-server, service x 
+2. pod => mysql-client 
+
+Action  pod2 access pod1 using the service name. command = mysql -u root -p1234 -h x.database-server.svc.cluster.local
+
+
+
+1. pod => mariadb-server, namespace database-server    x.database-server.cluster.local
+2. pod => mysql-client, namespace database-client  
+Action pod2 access pod1 using the service name.  command = mysql -u root -p1234 -h x.database-client.svc.cluster.local
+
+
+
+
+kubectl -n <namspace> 
+kubecto config --help
