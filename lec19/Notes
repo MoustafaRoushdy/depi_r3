@@ -26,3 +26,5 @@ Task3
 2. Create a stage to clone this repo https://github.com/MoustafaRoushdy/depi_r3.git (use git plugin, not git command)
 3. Install Docker plugin and read it's documentation 
 
+
+https://plugins.jenkins.io/ => see community section here 
