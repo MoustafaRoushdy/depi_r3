@@ -1,0 +1,4 @@
+1. Install Java: https://www.jenkins.io/doc/book/installing/linux/#installation-of-java
+2. Install Jenkins : https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
+3. Get the intial password from jenkins logs
+4. Install all suggested plugin
