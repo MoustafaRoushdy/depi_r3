@@ -9,3 +9,13 @@ Task Two
 2. job one should has the name Job1test > add a step to create a file named fil1.txt with your name as a content 
 3. job two should has the name job2test > cat the prvious created file
 4. job two should be triggered automatically when job1 is success
+Hint: Copy Artifact plugin
+
+
+To install a plugin 
+1. jenkins settings
+2. plugins
+3. avaialbe plugins 
+4. search about the plugin you want to install
+5. click install 
+6. Read the docs of the installed plugin to see how can you use it 
