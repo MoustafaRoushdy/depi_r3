@@ -2,3 +2,10 @@
 2. Install Jenkins : https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
 3. Get the intial password from jenkins logs
 4. Install all suggested plugin
+
+
+Task Two
+1. Create two free Style jobs in Jenkins 
+2. job one should has the name Job1test > add a step to create a file named fil1.txt with your name as a content 
+3. job two should has the name job2test > cat the prvious created file
+4. job two should be triggered automatically when job1 is success
