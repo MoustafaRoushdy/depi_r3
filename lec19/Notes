@@ -19,3 +19,10 @@ To install a plugin
 4. search about the plugin you want to install
 5. click install 
 6. Read the docs of the installed plugin to see how can you use it 
+
+
+Task3 
+1. Convert Task two to  pipeline jobs with names (job3test, job4test)
+2. Create a stage to clone this repo https://github.com/MoustafaRoushdy/depi_r3.git (use git plugin, not git command)
+3. Install Docker plugin and read it's documentation 
+
