@@ -1,0 +1,18 @@
+1. Please commit to the tasks and read the docker plugin docs agian
+2. Install docker plugin
+3. Add jenkins user to docker group "sudo usermod -aG docker jenkins"
+4. restart jenkins and docker (<jenkinsurl/restart><localhost:8080/restart>) OR sudo systemctl restart jenkins; sudo systemctl restart docker 
+5. Go to manage jenkins and see new Docker items appears
+6. Click on Clouds => new cloud => test_docker_agents => type Docker => Docker HOST URI unix:///var/run/docker.sock (this is called docker socket) => Save 
+7. Click on Docker and notice the cloud you just configured appears
+8. new Item => pipeline => Pipeline Syntax =>  Declarative Directive Generator => agent Directive => dockerContainer 
+9. In the Script click try sample pipeline and replace the agent directive from the one you copied from stop 8
+10. run the pipeline and see the magic happens
+11. screenshot للعبد لله 
+
+
+
+
+
+plugin docker pipeline
+plugin docker
