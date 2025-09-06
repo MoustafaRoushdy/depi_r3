@@ -5,3 +5,6 @@
 
 
 To disaply your path env var => echo $PATH
+
+
+Follow the instructions page 32-35 in the slides to configure prometheus as systemd service 
