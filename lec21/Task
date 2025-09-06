@@ -1,0 +1,7 @@
+1. Go to prometheus docs, read the isntallation guide
+2. download prometheus, extract it 
+3. cp the prometheus executable to /usr/local/bin 
+4. try to run prometheus --help from your home directory
+
+
+To disaply your path env var => echo $PATH
