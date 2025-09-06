@@ -6,5 +6,15 @@
 
 To disaply your path env var => echo $PATH
 
-
+Task2:
 Follow the instructions page 32-35 in the slides to configure prometheus as systemd service 
+(Home Task) => Do it using Ansible
+
+Task3:
+Install prometheus using Docker ( K8S bouns ), make sure to mount both config file and the database 
+https://prometheus.io/docs/prometheus/latest/installation/
+
+Please learn python basics, we will need it in the instrumentation
+
+
+
