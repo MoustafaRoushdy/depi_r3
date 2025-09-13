@@ -1,0 +1,7 @@
+Add your chat id and your bot token 
+send me a screenshot from your telegram including the message from alert manager
+
+Configure alert manager to also Send email to yourself when the nodeexpoerter is down
+
+add HAproxy as a service in your docker-compose file 
+search how to edit it's configuration so that you can monitor it using prometheus
