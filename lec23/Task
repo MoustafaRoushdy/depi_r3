@@ -9,3 +9,8 @@ search how to edit it's configuration so that you can monitor it using prometheu
 
 
 Monitor your containers using cadvisor 
+
+
+Add Grafana to your docker-compose file
+Add prometheus as data source
+Add {HAproxy or Cadvisor} dashboard
