@@ -5,3 +5,7 @@ Configure alert manager to also Send email to yourself when the nodeexpoerter is
 
 add HAproxy as a service in your docker-compose file 
 search how to edit it's configuration so that you can monitor it using prometheus
+
+
+
+Monitor your containers using cadvisor 
