@@ -1,10 +1,22 @@
+Task 1
 1. Install nginx using "sudo apt install -y nginx"
 2. Make sure that it is running using "sudo systemctl status nginx"
 3. cd to the conf dir of nginx /etc/nginx ; have a look 
 4. cd to /etc/nginx/sites-available; switch to the root user 
 5. cp default to a file called peter.conf
-6. update the server name to www.peter.com
+6. update the server name to www.peter.com; create a symlink inside sites-enabled
+"ln -s ../sites-available/peter.conf ." 
 7. rm the default conf file
 8. make sure that your conf is syntaxly ok using "nginx -t"
 9. reload nginx using "systemctl reload nginx"
 10. use this command to test your website => curl -H "Host: www.peter.com" localhost
+
+
+Task 2
+11. create a dir called /var/www/kareem
+12. create file inside it "index.html" with content "Hello Kareem"
+13. cp peter.conf to kareem.conf
+14. update the root to /var/www/kareem
+15. update the servername to www.kareem.com
+16. step 8 and 9 again 
+17. try curl -H "Host: www.peter.com" localhost and curl -H "Host: www.kareem.com" localhost, notice the differece you are requesting the same ip but two websites
