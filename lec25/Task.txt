@@ -17,6 +17,6 @@ Task 2
 12. create file inside it "index.html" with content "Hello Kareem"
 13. cp peter.conf to kareem.conf
 14. update the root to /var/www/kareem
-15. update the servername to www.kareem.com
+15. update the servername to www.kareem.com, create a sym link in sites availableand in update "listen 80 default_server;" to ""listen 80;"
 16. step 8 and 9 again 
 17. try curl -H "Host: www.peter.com" localhost and curl -H "Host: www.kareem.com" localhost, notice the differece you are requesting the same ip but two websites
