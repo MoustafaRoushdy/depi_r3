@@ -1,0 +1,10 @@
+1. Install nginx using "sudo apt install -y nginx"
+2. Make sure that it is running using "sudo systemctl status nginx"
+3. cd to the conf dir of nginx /etc/nginx ; have a look 
+4. cd to /etc/nginx/sites-available; switch to the root user 
+5. cp default to a file called peter.conf
+6. update the server name to www.peter.com
+7. rm the default conf file
+8. make sure that your conf is syntaxly ok using "nginx -t"
+9. reload nginx using "systemctl reload nginx"
+10. use this command to test your website => curl -H "Host: www.peter.com" localhost
