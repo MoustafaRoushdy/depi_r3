@@ -1,0 +1,6 @@
+1. Add new virtual host with name r_proxy
+2. make the server name node01.com
+3. add "proxy_pass http://54.85.90.72;" instead of 	try_files $uri $uri/ =404;
+4. enable the virtual host, check config syntax and reload nginx
+5. test your virtual host
+
