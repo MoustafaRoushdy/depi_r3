@@ -11,4 +11,4 @@ groups:
       severity: page
     annotations:
       summary: Node Exporter is down on instance {{ $labels.instance }}
-      description: "Node Exporter has been down for more than 1 minute.\n
+      description: "Node Exporter has been down for more than 1 minute.\n"

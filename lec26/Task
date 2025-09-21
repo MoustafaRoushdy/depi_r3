@@ -4,3 +4,9 @@
 4. enable the virtual host, check config syntax and reload nginx
 5. test your virtual host
 
+Task 2
+
+1. Create a new virtualhost where nginx will act as reverse proxy
+2. Try the round roubin, weighted, ip_hash, least_connection
+docs: https://nginx.org/en/docs/http/ngx_http_upstream_module.html
+

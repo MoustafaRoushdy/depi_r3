@@ -1,6 +1,7 @@
 
 volumes:
    prometheus_data: {}
+   grafana_data: {}
 
 networks:
    monitoring:
@@ -40,5 +41,40 @@ services:
     restart: unless-stopped
     volumes:
       - '/:/host:ro,rslave'
+    networks:
+      - monitoring
+  
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
+    networks:
+      - monitoring
+  
+
+  haproxy:
+    image: haproxy:3.2.4
+    container_name: haproxy
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    # ports:
+    #   - "8080:80"
+    networks:
+      - monitoring
+
+
+  grafana:
+    image: grafana/grafana:12.1
+    container_name: grafana
+    volumes:
+      - grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - "3000:3000"
     networks:
       - monitoring

@@ -9,7 +9,7 @@ receivers:
   -   name: telegram 
       telegram_configs:
       -  bot_token_file: /etc/alertmanager/telegram_token_file
-         chat_id: 514925728
+         chat_id:  
          message: |-
            {{ range .Alerts }}
            *Alert:* {{ .Annotations.summary }}

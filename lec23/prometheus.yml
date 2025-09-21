@@ -20,4 +20,4 @@ scrape_configs:
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
     static_configs:
-      - targets: ['localhost:9090','node_exporter:9100']
+      - targets: ['localhost:9090','node_exporter:9100','cadvisor:8080','haproxy:8404']
