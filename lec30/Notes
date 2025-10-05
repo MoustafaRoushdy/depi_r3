@@ -21,3 +21,8 @@ git help <specific command> | git <command> --help
 git log --name-only => list the names of files updated
 git log --oneline   => see logs with a commit in each entry
 git log -n <numberofcommits> => to see a specfic number of commits
+
+git branch <branchname> => to create a new branch
+git checkout -b <branchname> => to create a new branch and switch to it
+git switch || git checkout   => to switch to a different branch
+git log <branchname> to see the log of a branch
