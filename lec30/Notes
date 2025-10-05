@@ -26,3 +26,17 @@ git branch <branchname> => to create a new branch
 git checkout -b <branchname> => to create a new branch and switch to it
 git switch || git checkout   => to switch to a different branch
 git log <branchname> to see the log of a branch
+
+# To authenticate to github using ssh
+ssh-keygen  => keep pressing enter
+cat ~/.ssh/id_ed25519.pub
+copy the content 
+go to github, => setting, SSH and GPG keys => add new key 
+in the key section, paste and add any title 
+press Add SSH key
+
+git merge <branchname> => to merge to current branch
+git remote add <alias> <repo url>  => alias is just a name for your remote repo 
+git push <remoterepo> <branch>
+git push -u  <remoterepo> <branch> => local repo will always follow that remote repo
+git push 
