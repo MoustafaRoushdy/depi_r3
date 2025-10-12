@@ -1,4 +1,4 @@
-1. Install Terraform 
+1. Install Terraform and install AWS cli
 2. configure aws provider
 3. Create Vpc, two subnets, Igw, route table 
 4. Add necessary files to gitignore 
