@@ -1,0 +1,10 @@
+terraform init => intialize a dirctory (downloads required providers plugins and modules) and creates a hidden directory called .terraform 
+all terraform files should have the extension .tf
+terraform plan => to see a plan of what will happen 
+terraform apply => to really create your resourses
+Please run terraform init every time you add a new resource from a new provider
+
+
+<blocktype> <resourcetype> <resourcename> {
+    attributes
+}
