@@ -13,3 +13,9 @@ To reference attribute of a resource
 
 depends_on meta-arguement makes an explicit denpendency between resources
 if a resource references another resources this makes implict dependency between the resources
+
+terraform output => to see all outputs
+terraform output outputname => to see a specific output
+
+terraform show => to see the full state file 
+terraform plan, apply => will referesh the state file
