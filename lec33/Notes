@@ -1,0 +1,8 @@
+TO set a var value in terraform you can use 
+1. terraform.tfvars file
+2. env var "it's name is " TF_VAR_<varname>
+3. using cli -var key=value option
+4. prompt 
+5. default value
+6. -var-file 
+cli => env var => terraform.tfvars *.auto.tfvars => default => prompt
