@@ -6,3 +6,7 @@ TO set a var value in terraform you can use
 5. default value
 6. -var-file 
 cli => env var => terraform.tfvars *.auto.tfvars => default => prompt
+
+
+To reference attribute of a resource
+<resource_type>.<resource_name>.<attribute_name>
