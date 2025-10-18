@@ -10,3 +10,6 @@ cli => env var => terraform.tfvars *.auto.tfvars => default => prompt
 
 To reference attribute of a resource
 <resource_type>.<resource_name>.<attribute_name>
+
+depends_on meta-arguement makes an explicit denpendency between resources
+if a resource references another resources this makes implict dependency between the resources

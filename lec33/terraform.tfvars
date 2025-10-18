@@ -9,3 +9,4 @@ subnets = {
     az = "us-east-1b"
 }
 }
+db_name = "foo"

@@ -25,6 +25,7 @@ resource "aws_instance" "web_server" {
   ami = "ami-0341d95f75f311023"
   instance_type = "t3.micro"
   subnet_id = aws_subnet.sunbet1.id
+  depends_on = [ aws_db_instance.default ]
 }
 
 
@@ -33,17 +34,17 @@ resource "local_file" "foo" {
   filename = "${path.module}/file.txt"
 }
 
-# resource "aws_db_instance" "default" {
-#   allocated_storage    = 10
-#   db_name              = "mydb"
-#   engine               = "mysql"
-#   engine_version       = "8.0"
-#   instance_class       = "db.t3.micro"
-#   username             = var.db_name
-#   password             = var.db_pass
-#   parameter_group_name = "default.mysql8.0"
-#   skip_final_snapshot  = true
-# }
+resource "aws_db_instance" "default" {
+  allocated_storage    = 10
+  db_name              = "mydb"
+  engine               = "mysql"
+  engine_version       = "8.0"
+  instance_class       = "db.t3.micro"
+  username             = var.db_name
+  password             = var.db_pass
+  parameter_group_name = "default.mysql8.0"
+  skip_final_snapshot  = true
+}
 
 
 
