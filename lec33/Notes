@@ -19,3 +19,9 @@ terraform output outputname => to see a specific output
 
 terraform show => to see the full state file 
 terraform plan, apply => will referesh the state file
+
+terraform graph => display dependencies between resources
+terraform validate => validate you configuration from syntax errors
+terraform fmt => fomrat your configuration to more readable form
+terrafomr state show <resourcetype>.<resourcesname> to all attributes fo this resources
+terrafomr providers to see installed providers with their versions

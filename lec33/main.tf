@@ -4,30 +4,30 @@ resource "aws_vpc" "example" {
 }
 
 resource "aws_subnet" "sunbet1" {
-    vpc_id = aws_vpc.example.id
-    cidr_block = var.subnets["subnet1"]["cidr_block"]
-    availability_zone = var.subnets["subnet1"]["az"]
-    tags = {
-      Name = "subnet1"
-    }
+  vpc_id            = aws_vpc.example.id
+  cidr_block        = var.subnets["subnet1"]["cidr_block"]
+  availability_zone = var.subnets["subnet1"]["az"]
+  tags = {
+    Name = "subnet1"
+  }
 }
 
 resource "aws_subnet" "sunbet2" {
-    vpc_id = aws_vpc.example.id
-    cidr_block = var.subnets.subnet2.cidr_block
-    availability_zone = var.subnets.subnet2.az
-    tags = {
-      Name = "subnet2"
-    }
+  vpc_id            = aws_vpc.example.id
+  cidr_block        = var.subnets.subnet2.cidr_block
+  availability_zone = var.subnets.subnet2.az
+  tags = {
+    Name = "subnet2"
+  }
 }
 
 resource "aws_instance" "web_server" {
-  ami = "ami-0341d95f75f311023"
+  ami           = "ami-0341d95f75f311023"
   instance_type = "t3.micro"
-  subnet_id = aws_subnet.sunbet1.id
-  depends_on = [ aws_db_instance.default ]
-}
+  subnet_id     = aws_subnet.sunbet1.id
+  depends_on    = [aws_db_instance.default]
 
+}
 
 resource "local_file" "foo" {
   content  = "Hello World!"
