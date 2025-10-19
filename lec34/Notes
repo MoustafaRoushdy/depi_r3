@@ -8,3 +8,9 @@ terraform state show <resourcetyp>.<resourcename>[index]
 list vars can't be used with for_each instead use set => toset(var.test)
 for_each converts sets to maps (it only treats with maps) 
 terraform state show <resourcetype>.<resourcename>["key"]
+
+
+terrform state rm <reousrcetype>.<resourcename> => to remove a resource from the state file
+usually used when I want the resource to not be managed by terraform anymore but still exist in the cloud provider
+terrafomr state mv <source> <destination> => to rename a resource in the state file
+usually used when I want to change the resource name in the code and reflect that in the state file without recreating the resource
