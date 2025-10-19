@@ -1,4 +1,10 @@
 lifecycle meta-argument 
-prevent_destory => the resource will never be destoried using terraform
-create_before_destory => when recreation the new resource will be created before the old one being destried 
+prevent_destory => the resource will never be destoryed using terraform
+create_before_destory => when recreation the new resource will be created before the old one being destroyed 
 ignore_changes => will ignore changes to some attributes of the resource
+
+count creates a list of objects  => count.index
+terraform state show <resourcetyp>.<resourcename>[index]
+list vars can't be used with for_each instead use set => toset(var.test)
+for_each converts sets to maps (it only treats with maps) 
+terraform state show <resourcetype>.<resourcename>["key"]
