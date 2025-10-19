@@ -1,0 +1,4 @@
+lifecycle meta-argument 
+prevent_destory => the resource will never be destoried using terraform
+create_before_destory => when recreation the new resource will be created before the old one being destried 
+ignore_changes => will ignore changes to some attributes of the resource
