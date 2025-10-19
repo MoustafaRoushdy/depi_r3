@@ -1,12 +1,12 @@
 # Create a VPC
-resource "aws_vpc" "example" {
+resource "aws_vpc" "main" {
   cidr_block = var.vpc_cidr_block
 }
 
 
 resource "aws_subnet" "my_subnets" {
   for_each          = var.subnets
-  vpc_id            = aws_vpc.example.id
+  vpc_id            = aws_vpc.main.id
   cidr_block        = each.value.cidr_block
   availability_zone = each.value.az
   tags = {
@@ -17,7 +17,7 @@ resource "aws_subnet" "my_subnets" {
 
 resource "aws_subnet" "my_subnets2" {
   for_each          = var.subnets2
-  vpc_id            = aws_vpc.example.id
+  vpc_id            = aws_vpc.main.id
   cidr_block        = each.value
   tags = {
     Name = each.key
@@ -47,7 +47,7 @@ resource "aws_instance" "web_server" {
   ami           = data.aws_ami.example.id
   instance_type = "t3.micro"
   availability_zone = each.value
-  depends_on    = [aws_db_instance.default]
+  # depends_on    = [aws_db_instance.default]
 }
 
 resource "local_file" "foo" {
@@ -55,26 +55,26 @@ resource "local_file" "foo" {
   filename = "${path.module}/file.txt"
 }
 
-resource "aws_db_instance" "default" {
-  allocated_storage    = 20
-  db_name              = "mydb"
-  engine               = "mysql"
-  engine_version       = "8.0"
-  instance_class       = "db.t3.micro"
-  username             = var.db_name
-  password             = var.db_pass
-  parameter_group_name = "default.mysql8.0"
-  skip_final_snapshot  = true
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+# resource "aws_db_instance" "default" {
+#   allocated_storage    = 20
+#   db_name              = "mydb"
+#   engine               = "mysql"
+#   engine_version       = "8.0"
+#   instance_class       = "db.t3.micro"
+#   username             = var.db_name
+#   password             = var.db_pass
+#   parameter_group_name = "default.mysql8.0"
+#   skip_final_snapshot  = true
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
 
 
 resource "aws_security_group" "allow_ec2_allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic and all outbound traffic"
-  vpc_id      = aws_vpc.example.id
+  vpc_id      = aws_vpc.main.id
 
   tags = {
     Name = "allow_tls"
@@ -84,7 +84,7 @@ resource "aws_security_group" "allow_ec2_allow_tls" {
 resource "aws_security_group" "allow_db_allow_mysql" {
   name        = "allow_mysql"
   description = "Allow mysql inbound traffic"
-  vpc_id      = aws_vpc.example.id
+  vpc_id      = aws_vpc.main.id
 
   tags = {
     Name = "RDS MySQL SG"
