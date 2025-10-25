@@ -1,3 +1,5 @@
 logging in terraform are [""TRACE", "DEBUG", "INFO", "WARN", "ERROR"]
 env var TF_LOG is used to set the logging level in terraform.
 env var TF_LOG_PATH is used to set the path of the log file.
+terraform taint is used to mark a resource as tainted, so that it will be destroyed and recreated on the next apply.
+terraform untaint is used to remove the tainted state from a resource.
