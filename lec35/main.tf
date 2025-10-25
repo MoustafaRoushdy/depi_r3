@@ -48,6 +48,10 @@ resource "aws_instance" "web_server" {
   instance_type = "t3.micro"
   availability_zone = each.value
   # depends_on    = [aws_db_instance.default]
+  provisioner "local-exec" {
+    command = "echo ${self.private_ip} > webserver_priv_ip.txt" 
+    when = destroy
+  }
 }
 
 resource "local_file" "foo" {
