@@ -4,14 +4,4 @@ subnets = {
     cidr_block = "10.1.0.0/24"
     az         = "us-east-1a"
   }
-  subnet2 = {
-    cidr_block = "10.1.1.0/24"
-    az         = "us-east-1b"
-  }
-  subnet3 = {
-      cidr_block = "10.1.2.0/24"
-      az         = "us-east-1c"
-    }
 }
-db_name = "foo"
-db_pass = "kalsghpuoj"
