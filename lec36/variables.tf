@@ -23,16 +23,16 @@ variable "subnets" {
 
 
 variable "subnets2" {
- default =  {
-      cidr_block1 = "10.1.3.0/24"
-      cidr_block2 = "10.1.4.0/24"
- }
+  default = {
+    cidr_block1 = "10.1.3.0/24"
+    cidr_block2 = "10.1.4.0/24"
+  }
 
 }
 variable "azs" {
   type    = list(string)
   default = ["us-east-1a", "us-east-1b"]
-  
+
 }
 // x[0]  x["us-east-1a"]
 // toset(azs) => {"us-east-1a", "us-east-1b"}

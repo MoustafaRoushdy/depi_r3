@@ -1,8 +1,13 @@
-1. Create a main.tf with a single ec2 instance.
-2. Create a provider.tf file to configure the AWS provider and S3 as backend. docs: https://developer.hashicorp.com/terraform/language/backend/s3
-3. push your code to github. 
-4. send me a screenshot of your S3 bucket with the tfstate file inside it and the github repo with your code.
-
-1. https://kodekloud.com/studio/labs/terraform/terraform-provisioners
-2. use remote provider to install apache web server on the ec2 instance.
-docs: https://developer.hashicorp.com/terraform/language/block/resource#provisioner/remote-exec
+1. Create a terraform module that create an ec2 instance and it's sg inside a vpc with public and private subnets.
+2. the module should accept the following variables:
+   - vpc_cidr
+   - public_subnet_cidrs
+   - private_subnet_cidrs
+   - instance_type
+   - ami_id
+3. The module should output the following values:
+   - vpc_id
+   - public_subnet_ids
+   - private_subnet_ids
+   - instance_id
+4. Use the module in the root module to create a vpc with 2 public subnets and 2 private subnets, and an ec2 instance in one of the public subnets

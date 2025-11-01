@@ -22,7 +22,7 @@
 #   tags = {
 #     Name = each.key
 #   }
-  
+
 # }
 # # resource "aws_subnet" "sunbet1" {
 # #   vpc_id            = aws_vpc.example.id
@@ -124,7 +124,24 @@
 # #sg1 -> sg2 
 # #sg1 -> sg3 
 
+
+# module "vpc" {
+#   source  = "terraform-aws-modules/vpc/aws"
+#   version = "6.5.0"
+#   # The rest of arguments are omitted for brevity
+
+#   enable_nat_gateway = false
+#   create_igw         = true
+#   public_subnets     = ["10.0.0.0/24", "10.0.1.0/24"]
+#   azs                = ["us-east-1a", "us-east-1b"]
+# }
+
+module "custom_vpc" {
+  source = "./modules/vpc"
+}
+
 resource "aws_instance" "imported_ec2" {
   ami = "ami-0bdd88bd06d16ba03"
   instance_type = "t3.micro"
+  subnet_id = module.custom_vpc.subnet_ids[0]
 }
