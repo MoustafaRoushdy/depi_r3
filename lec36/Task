@@ -1,0 +1,8 @@
+1. Create a main.tf with a single ec2 instance.
+2. Create a provider.tf file to configure the AWS provider and S3 as backend. docs: https://developer.hashicorp.com/terraform/language/backend/s3
+3. push your code to github. 
+4. send me a screenshot of your S3 bucket with the tfstate file inside it and the github repo with your code.
+
+1. https://kodekloud.com/studio/labs/terraform/terraform-provisioners
+2. use remote provider to install apache web server on the ec2 instance.
+docs: https://developer.hashicorp.com/terraform/language/block/resource#provisioner/remote-exec
