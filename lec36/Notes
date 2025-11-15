@@ -1,0 +1,21 @@
+Import steps: 
+1. Create a configuration resource with at least the requrired arguments
+2. Run terrafomr import <resource address> <uniqure identifier for the reosurc>
+                        <resourcetype>.<resourcename> <get from proivder doc>
+
+# Modules
+1. Modules are making terraform modular and reusable.
+2. modules are just a folder with terraform code inside it.
+3. You can call modules from root module or other modules.
+4. You can call modules from public registry or private registry or you can have your own modules.
+5. Modues inputs are called variables if they don't have default values they are required.
+6. you can't reference resources inside modules from root module or other modules directly instead you have to use outputs.
+
+module "module_name" {
+  source = "./path to module or registry path"
+  version = "x.y.z" # if from registry
+  
+  # input variables
+  var1 = "value1"
+  var2 = "value2"
+}
