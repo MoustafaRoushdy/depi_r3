@@ -1,0 +1,62 @@
+chmod  u,g,o +- rwx  <filename>
+-rw-rwx--- 1 moustafa moustafa 19 Jul  5 16:10 file1.txt
+<filetype><user permission><grp permission><otherperm> <n of links> <owner> <groupowner> <filesize>
+<last edit timestamp> <filename>
+1     0 
+
+0 1 2 3 
+0 1 2 3 4 
+0 1 2 3 5 6 7 octa 
+2^0=1 x
+2^1=2 w
+2^2=4 r
+4+2+1=7
+-rw-rw-r--
+ 664
+ --- 0
+ --x 1
+ -w- 2
+ -wx 3
+ r-- 4
+ r-x 5
+ rw- 6
+ rwx 7
+
+chmod <octa> <filename>
+chmod -R <oct> <filename>  => recursivly
+chown  user:group   <filename>
+chown user <filename>
+chown :group <filename>
+chgrp group <filename>
+chown -R => recursivly
+
+use nano to edit files
+to save press (ctr + o )  + enter
+to exit press (ctr + x )
+
+
+
+1. create a dir called depi_r3/lec3 using one command
+2. create a file with your name
+3. edit the file with the content "print('Hello world')"
+4. edit the permmisson of the file so that only the group can execute it5. using the oct, remove all perm from the other 
+6. recurisly add the w perm to the o in the /tmp dir 
+7. create a new group called devs 
+8. recurisvly change the group owner of the lec3 dir to have the group dev using two methods
+-------------------------------------------------------------------
+
+Notes:
+1. > to redirct std out to a file
+2. 2> to redirct std error to a file
+3. >> to append std out to a file
+4. 2>> to append std error to a file
+5. > <file1> 2> <file2> redirect std out to file1 and std error to file2
+6. &> <filename> redirect both std out and std error to a file
+7. > <filename> 2>&1 redirect both std out and std error to a file
+8. < <filename> take input from the file
+
+Task:
+1. try to "cat" two file (the file with your name, and ziad file"
+2. redirect std out to file x and error out to y
+3. do the same and redirect both to z
+ 

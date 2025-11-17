@@ -1,0 +1,6 @@
+total 16
+-rwxrw---- 1 moustafa moustafa   28 Jul  5 16:56 file1.txt
+-rw-rw-r-- 1 moustafa moustafa 1098 Jul  5 17:02 noteslec3
+-rw-rw-r-- 1 moustafa moustafa   51 Jul  5 18:23 std_err.txt
+-rw-rw-r-- 1 moustafa moustafa    0 Jul  5 18:24 std_out.txt
+drwxrwxrwx 2 Ibrahim  moustafa 4096 Jul  5 16:47 wael

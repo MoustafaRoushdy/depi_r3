@@ -1,0 +1,16 @@
+1. Don't create a PV or a PVC manaully 
+2. Create a statful set (create a deployment file and edit it )
+3. Create it with image httpd and 4 replicas
+4. use this PVC Template 
+
+volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 10Mi
+
+
+          

@@ -1,0 +1,27 @@
+TO set a var value in terraform you can use 
+1. terraform.tfvars file
+2. env var "it's name is " TF_VAR_<varname>
+3. using cli -var key=value option
+4. prompt 
+5. default value
+6. -var-file 
+cli => env var => terraform.tfvars *.auto.tfvars => default => prompt
+
+
+To reference attribute of a resource
+<resource_type>.<resource_name>.<attribute_name>
+
+depends_on meta-arguement makes an explicit denpendency between resources
+if a resource references another resources this makes implict dependency between the resources
+
+terraform output => to see all outputs
+terraform output outputname => to see a specific output
+
+terraform show => to see the full state file 
+terraform plan, apply => will referesh the state file
+
+terraform graph => display dependencies between resources
+terraform validate => validate you configuration from syntax errors
+terraform fmt => fomrat your configuration to more readable form
+terrafomr state show <resourcetype>.<resourcesname> to all attributes fo this resources
+terrafomr providers to see installed providers with their versions

@@ -1,0 +1,20 @@
+global:
+route:
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+  receiver: 'telegram'
+receivers:
+  -   name: telegram 
+      telegram_configs:
+      -  bot_token_file: /etc/alertmanager/telegram_token_file
+         chat_id:  
+         message: |-
+           {{ range .Alerts }}
+           *Alert:* {{ .Annotations.summary }}
+           *description:* {{ .Annotations.description }}
+           *Severity:* {{ .Labels.severity }}
+           *Instance:* {{ .Labels.instance }}
+           *Starts At:* {{ .StartsAt }}
+           {{ end }}

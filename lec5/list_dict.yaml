@@ -1,0 +1,43 @@
+#list
+- orange
+- mango
+- apple
+- banan
+
+# dictionary
+name: ahmed
+age: 28
+salary: 10000
+location: cairo
+
+# key with the value is list
+fruits:
+  - orange
+  - mango
+  - apple
+  - banan
+
+# key with the value is dic
+employee:
+  name: ahmed
+  age: 28
+  salary: 10000
+  location: cairo
+  favorite_colors:
+    - red
+    - yellow
+    - green
+  key2:
+    key3: value
+    key4: value 
+
+
+employees:
+  - name: ahmed
+    age: 30
+    salary: 5000
+  - name: mohamed
+    age: 25
+    salary: 4000
+
+

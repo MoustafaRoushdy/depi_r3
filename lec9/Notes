@@ -1,0 +1,8 @@
+docker pull <image name> => to pull image from dockerhub
+docker run <image name>  => to run a container
+docker run -d <image name>  => to run a container in a detached mode
+docker run -d -p <hostport:containerport> <image name>  => to run a container in a detached mode and port forward
+docker run -d -p <hostport:containerport> --name <containername> <image name>  => to run a container in a detached mode and port forward and name
+docker stop <container name | container id> stop a container 
+docker exec -it <container id> /bin/sh => to open interactive shell inside the container
+docker ps => to list all running containers

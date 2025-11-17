@@ -1,0 +1,6 @@
+1. Install Terraform and install AWS cli
+2. configure aws provider
+3. Create Vpc, two subnets, Igw, route table 
+4. Add necessary files to gitignore 
+5. send me a link of your git repo 
+6. https://kodekloud.com/studio/labs/terraform/terraform-variables

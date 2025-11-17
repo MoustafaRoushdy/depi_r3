@@ -1,0 +1,35 @@
+imagename:  <registery>/<namespace>/<reponame>:<tag>
+            docker.io/moustafaroushdy/flask_depi_r3:v0.3
+            https://hub.docker.com/repository/docker/moustafaroushdy/flask_depi_r3
+
+
+1. Displaying the file contents on the terminal ✅ lec1
+2. File and Directory Manipulation Commands✅ lec1
+3. Extract, sort and filter data Commands
+4. Basic Terminal Navigation Commands✅ lec1
+5. File Permissions Commands ✅ lec3
+6. Linux Directory Structure ✅ lec3
+7. Input Output Redirection in Linux  ✅ lec3
+8. Variables and Bash Scripting ✅ lec4 63-90
+9. Working with Debian Packages using dpkg Command ✅ lec4 90-98
+10. Linux Networking Tools ✅ lec 11 98-107
+
+
+Network my_app_network
+1. frontend
+2. backend
+3. database 
+
+1. network front_back   (front container, back container )
+2. network back_database (back container, database container)
+
+Task 
+1. Create the above two networks
+2. Create a nginx container in the network 1
+3. Create a container form your flask app in network 1, and network 2 
+4. Create a Maria db container in network 2
+5. verify with screenshots
+6. exec in the nginx container, curl the ip:port of your flask app
+
+1 -> 2 -> 3 
+1 -> 3 

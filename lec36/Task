@@ -1,0 +1,13 @@
+1. Create a terraform module that create an ec2 instance and it's sg inside a vpc with public and private subnets.
+2. the module should accept the following variables:
+   - vpc_cidr
+   - public_subnet_cidrs
+   - private_subnet_cidrs
+   - instance_type
+   - ami_id
+3. The module should output the following values:
+   - vpc_id
+   - public_subnet_ids
+   - private_subnet_ids
+   - instance_id
+4. Use the module in the root module to create a vpc with 2 public subnets and 2 private subnets, and an ec2 instance in one of the public subnets

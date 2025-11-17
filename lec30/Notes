@@ -1,0 +1,42 @@
+Working Area
+ 
+Staging Area
+ 
+Commited Area
+ 
+ 
+git config user.name <username>
+git config user.email <email>
+ 
+git init   => initialzie git 
+git add  <filename/s>  => add files to the Staging
+git commit -m <commit message>
+git status  => to see status for current working/staging Area
+git log     => to see the logs of the commits already doesn
+.gitignore  => add file names you don't want git to track here 
+git --help => to list git availabe commands
+git help <specific command> | git <command> --help
+
+
+git log --name-only => list the names of files updated
+git log --oneline   => see logs with a commit in each entry
+git log -n <numberofcommits> => to see a specfic number of commits
+
+git branch <branchname> => to create a new branch
+git checkout -b <branchname> => to create a new branch and switch to it
+git switch || git checkout   => to switch to a different branch
+git log <branchname> to see the log of a branch
+
+# To authenticate to github using ssh
+ssh-keygen  => keep pressing enter
+cat ~/.ssh/id_ed25519.pub
+copy the content 
+go to github, => setting, SSH and GPG keys => add new key 
+in the key section, paste and add any title 
+press Add SSH key
+
+git merge <branchname> => to merge to current branch
+git remote add <alias> <repo url>  => alias is just a name for your remote repo 
+git push <remoterepo> <branch>
+git push -u  <remoterepo> <branch> => local repo will always follow that remote repo
+git push 
