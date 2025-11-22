@@ -5,10 +5,12 @@ create two public subnets (10.0.1.0/24, 10.0.2.0/24 )
       = associate this route table to the two public subnets created earlier 
 create two private subnets (10.0.3.0/24, 10.0.4.0/24) with access to the internet through nat instance
       = create nat instance with ami (amazon linux 2023) and user data to install and configure iptables to run as nat instance ( make sure to auto assing public IP )
+      = make sure that it's security group should allow inbound port (80,443) from (10.0.0.0/16) (vpc cidr block)
       = disalbe source/distination checks
       =  create route table with rule that routes 0.0.0.0/0(internet) to the nat instance
       = associate this route table to the two private subnets created earlier
 create two private subnets (10.0.5.0/24, 10.0.6.0/24) without access to the internet
+Note when you create a test instance make sure that it's outbound rule allow ( at least port 80,443 to the nat instance ), and inbound rule port 22 from at least the nat instance 
 Create mysql rds with mysql engine, free tier template, single az with "lecture39" password and lecture39 as db identifier
 
 steps to create "الرسمة اللي رسمناها مع بعض في أول السيشن"
