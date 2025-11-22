@@ -6,7 +6,7 @@ module "vpc" {
 
   azs             = ["us-east-1a", "us-east-1b", "us-east-1c"]
   private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
+  public_subnets  = ["10.0.128.0/24", "10.0.129.0/24", "10.0.130.0/24"]
 
   enable_nat_gateway = false
   enable_vpn_gateway = false
@@ -39,10 +39,43 @@ resource "aws_instance" "bation_host" {
 
 }
 
-# edit this module parameters to create the public subnets in 10.0.0.0/17 
+resource "aws_security_group" "bastion_sg" {
+  vpc_id      = module.vpc.vpc_id
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.128.0/17"] # Replace with your private subnets' CIDR
+  }
+
+  egress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 445
+    to_port     = 445
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+
+# edit this module parameters to create the private subnets in 10.0.0.0/24 
 # write a comment demonstrate the range of IPs allowed in this subnet
 
-# edit this module parameters to create the private subnets in 10.0.128.0/17 
+# edit this module parameters to create the public subnets in 10.0.128.0/24 
 # write a comment demonstrate the range of IPs allowed in this subnet
 
 # create a security group for the bation host to allow only ssh inbound connection from every where
