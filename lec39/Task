@@ -1,0 +1,14 @@
+open vpc => create a vpc with a cidr 10.0.0.0/16 ( name it lecture39 )
+Create internet gateway (name it lecture39 ) and attach it to the vpc
+create two public subnets (10.0.1.0/24, 10.0.2.0/24 )
+      = create route table with rule that routes 0.0.0.0/0(internet) to the internet gateway
+      = associate this route table to the two public subnets created earlier 
+create two private subnets (10.0.3.0/24, 10.0.4.0/24) with access to the internet through nat instance
+      = create nat instance with ami (amazon linux 2023) and user data to install and configure iptables to run as nat instance ( make sure to auto assing public IP )
+      = disalbe source/distination checks
+      =  create route table with rule that routes 0.0.0.0/0(internet) to the nat instance
+      = associate this route table to the two private subnets created earlier
+create two private subnets (10.0.5.0/24, 10.0.6.0/24) without access to the internet
+Create mysql rds with mysql engine, free tier template, single az with "lecture39" password and lecture39 as db identifier
+
+steps to create "الرسمة اللي رسمناها مع بعض في أول السيشن"
