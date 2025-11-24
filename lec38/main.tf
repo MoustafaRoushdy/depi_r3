@@ -1,18 +1,19 @@
 module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
+  source  = "terraform-aws-modules/vpc/aws"
   version = "~> 6.5.0"
-  name = "my-vpc"
-  cidr = "10.0.0.0/16"
+  name    = "my-vpc"
+  cidr    = "10.0.0.0/16"
 
   azs             = ["us-east-1a", "us-east-1b", "us-east-1c"]
-  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
-
+  private_subnets = ["10.0.0.0/17"]
+  # IPs 10.0.0.1 - 10.0.127.254
+  public_subnets = ["10.0.128.0/17"]
+  # IPs 10.0.128.1 - 10.0.255.254
   enable_nat_gateway = false
   enable_vpn_gateway = false
 
   tags = {
-    Terraform = "true"
+    Terraform   = "true"
     Environment = "dev"
   }
 }
@@ -32,11 +33,39 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_instance" "bation_host" {  
-    subnet_id = module.vpc.public_subnets[0]
-    instance_type = "t3.micro"
-    ami = data.aws_ami.ubuntu.id
+resource "aws_instance" "bation_host" {
+  subnet_id     = module.vpc.public_subnets[0]
+  instance_type = "t3.micro"
+  ami           = data.aws_ami.ubuntu.id
 
+}
+
+# ----------------------------
+# Security Group
+# ----------------------------
+resource "aws_security_group" "allow_ssh" {
+  name        = "allow_ssh"
+  description = "Allow SSH inbound traffic"
+  vpc_id      = module.vpc.default_vpc_id
+
+  ingress {
+    description = "SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "allow-ssh"
+  }
 }
 
 # edit this module parameters to create the public subnets in 10.0.0.0/17 
